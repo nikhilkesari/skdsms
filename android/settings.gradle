@@ -1,0 +1,16 @@
+rootProject.name = 'SkedSMS'
+
+// Conditionally include React Native Gradle Plugin if present
+def rnPlugin = file("../node_modules/@react-native/gradle-plugin")
+if (rnPlugin.exists()) {
+    includeBuild(rnPlugin)
+}
+
+// Conditionally apply React Native autolinking script
+def autolinkScript = file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle")
+if (autolinkScript.exists()) {
+    apply from: autolinkScript
+    applyNativeModulesSettingsGradle(settings)
+}
+
+include ':app'

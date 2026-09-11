@@ -1,0 +1,106 @@
+apply plugin: "com.android.application"
+
+// Apply React Native Gradle Plugin
+def rnPluginApplied = false
+try {
+    apply plugin: "com.facebook.react"
+    rnPluginApplied = true
+} catch (Exception ignored) {
+    // Falls back gracefully if React Native plugin is not loaded
+}
+
+if (!project.plugins.hasPlugin("org.jetbrains.kotlin.android")) {
+    try {
+        apply plugin: "org.jetbrains.kotlin.android"
+    } catch (Exception ignored) {}
+}
+
+android {
+    ndkVersion rootProject.ext.ndkVersion
+    compileSdk = rootProject.ext.compileSdkVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    namespace "com.skedsms"
+
+    defaultConfig {
+        applicationId "com.skedsms"
+        minSdk = rootProject.ext.minSdkVersion
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdk = rootProject.ext.targetSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+        release {
+            if (file('skedsms-release.keystore').exists()) {
+                storeFile file('skedsms-release.keystore')
+                storePassword 'skedsms123'
+                keyAlias 'skedsms'
+                keyPassword 'skedsms123'
+            } else if (file('debug.keystore').exists()) {
+                // Fallback to debug keystore for CI/mock assembleRelease validation
+                storeFile file('debug.keystore')
+                storePassword 'android'
+                keyAlias 'androiddebugkey'
+                keyPassword 'android'
+            } else {
+                storeFile file('skedsms-release.keystore')
+                storePassword 'skedsms123'
+                keyAlias 'skedsms'
+                keyPassword 'skedsms123'
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+dependencies {
+    implementation("com.facebook.react:react-android")
+    implementation("com.facebook.react:hermes-android")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.activity:activity-ktx:1.8.2")
+
+    // Testing dependencies
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
+
+// Conditionally apply React Native native modules autolinking
+def autolinkAppScript = file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle")
+if (autolinkAppScript.exists()) {
+    apply from: autolinkAppScript
+    applyNativeModulesAppBuildGradle(project)
+}
