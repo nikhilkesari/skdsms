@@ -11,8 +11,46 @@
 
 ---
 
+## 🤝 Project Retrospective: Built with Google Gemini Teamwork Preview
+
+> **Engineering Note**: This entire application — from domain architecture and React Native components to native Android background alarm receivers, build scripts, and a 642-test automated suite — was architected and implemented using **Google Gemini's Teamwork Preview** (`/teamwork-preview`), Google DeepMind's multi-agent autonomous software engineering system.
+
+### How It Worked
+Google Gemini Teamwork Preview coordinates a hierarchy of autonomous, specialized AI agents operating in parallel to tackle large, complex software engineering tasks that exceed single-agent capabilities:
+
+1. **Autonomous Milestone Decomposition**:
+   Starting from raw functional requirements, the system autonomously broke down the application into five structured milestones:
+   - **M1: Scaffolding & Build Configuration** (Gradle, React Native 0.87.1, Indus AppStore package configuration, release keystores).
+   - **M2: Domain Models, Persistence & Validation** (E.164 phone normalization, daily recurrence math, storage repositories).
+   - **M3: Native Background Scheduling & Telephony** (Kotlin `SmsModule`, `AlarmManager.RTC_WAKEUP` exact alarm dispatching, `BootReceiver`).
+   - **M4: User Interface & Schedule Lifecycle** (Material Design UI, contact picker integration, GSM-7/Unicode segment counter, CRUD actions).
+   - **M5: End-to-End Verification & Adversarial Hardening** (Opaque-box multi-tier test pass & challenger stress loops).
+
+2. **Specialized Multi-Agent Hierarchy & Management**:
+   The development process was managed through distinct, collaborating agent personas:
+   - **👑 Orchestrator & Sub-Orchestrators**: Decomposed high-level goals into dependency DAGs, assigned tasks to worker pools, tracked milestone criteria, and enforced architectural consistency across commits.
+   - **🔍 Spec Miner**: Analyzed raw requirements, platform docs, and Android guidelines to extract formal specifications, interface contracts, and non-obvious constraints (e.g., Doze mode, Android 12+ `SCHEDULE_EXACT_ALARM` permissions, multi-part SMS splitting).
+   - **🧭 Explorer**: Surveyed codebase structure, verified external library compatibility, and explored Android native APIs before implementation began.
+   - **💻 Worker Agents**: Implemented modular, strongly-typed code in parallel branches — writing TypeScript business logic, React Native screens, and native Kotlin broadcast receivers.
+   - **🥊 Challenger Agents (Adversarial Quality Assurance)**: Built stress tests, boundary checks, concurrent schedule simulations, and fault-injection cases specifically engineered to find edge cases and break worker implementations.
+   - **🔎 Reviewer Agents**: Conducted rigorous pull-request reviews, verifying TypeScript strictness, lint cleanliness, and regression safety.
+   - **🛡️ Sentinel & Victory Auditor**: Autonomous gatekeepers that continuously ran `npm test` and build validators (`scripts/validate-android-build.js`), rejecting regressions and ensuring all milestone quality gates were 100% satisfied before proceeding.
+
+### Key Features of Teamwork Preview Utilized
+- **Parallel Subagent Workspaces**: Workers, Challengers, and Reviewers worked simultaneously in isolated branches without blocking the main branch or context window.
+- **Reactive Event Loop & Autonomous Messaging**: Agents notified each other upon milestone completion without polling, handing off artifacts seamlessly.
+- **Continuous Project Memory**: Preserved state and architectural contracts in `PROJECT.md` and `.agents/` across sessions, ensuring multi-turn continuity.
+- **Automated Quality Gates**: Guaranteed that no code reached the final build without passing all 642 tests across 30 suites and completing clean Android build validation.
+
+### Why It Was Helpful
+- **Eliminated Implementation Gaps**: The adversarial Worker ↔ Challenger loop caught real-world mobile edge cases early — such as `SecurityException` on Android 12+ exact alarms, date parsing variations, and restoring missed alarms after device reboot.
+- **Production-Ready Quality**: Generated clean, production-grade code adhering to Clean Architecture principles with complete test coverage, type safety, and comprehensive documentation in a fraction of traditional development time.
+
+---
+
 ## 📖 Table of Contents
 
+- [Built with Google Gemini Teamwork Preview](#-project-retrospective-built-with-google-gemini-teamwork-preview)
 - [What It Does](#-what-it-does)
 - [Key Features](#-key-features)
 - [Architecture & Design](#-architecture--design)
