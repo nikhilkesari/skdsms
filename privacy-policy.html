@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Sked SMS</title>
+  <meta name="description" content="Privacy Policy for Sked SMS: On-device automated message scheduling for SMS and WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0F766E;
+      --primary-light: #14B8A6;
+      --primary-dark: #115E59;
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --text: #0F172A;
+      --text-muted: #475569;
+      --border: #E2E8F0;
+      --tag-bg: #CCFBF1;
+      --tag-text: #0F766E;
+      --callout-bg: #F0FDF4;
+      --callout-border: #86EFAC;
+      --callout-text: #166534;
+      --warning-bg: #FEF3C7;
+      --warning-border: #FCD34D;
+      --warning-text: #92400E;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 1rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 2rem auto 4rem auto;
+      background: var(--surface);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 3rem 2.5rem 2.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    header p.subtitle {
+      color: #CCFBF1;
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      color: #E6FFFA;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 1rem;
+      margin-top: 1rem;
+    }
+
+    .content {
+      padding: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-top: 2.25rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    ul, ol {
+      color: var(--text-muted);
+      margin-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .card {
+      background: #F1F5F9;
+      border-left: 4px solid var(--primary);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .callout-success {
+      background-color: var(--callout-bg);
+      border: 1px solid var(--callout-border);
+      color: var(--callout-text);
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    .callout-success strong {
+      color: var(--callout-text);
+    }
+
+    .callout-warning {
+      background-color: var(--warning-bg);
+      border: 1px solid var(--warning-border);
+      color: var(--warning-text);
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    .callout-warning strong {
+      color: var(--warning-text);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background-color: #F8FAFC;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    td code {
+      background: #E2E8F0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-family: monospace;
+      color: #0F172A;
+    }
+
+    footer {
+      background-color: #F8FAFC;
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 2rem 1.5rem 1.5rem;
+      }
+      header h1 {
+        font-size: 1.75rem;
+      }
+      .content {
+        padding: 1.5rem;
+      }
+      footer {
+        padding: 1.25rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="badge">Official Policy Document</div>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Sked SMS: Automated Message & Recurrence Scheduler</p>
+    <div class="meta">
+      <div><strong>Application:</strong> Sked SMS (com.skedsms)</div>
+      <div><strong>Effective Date:</strong> September 19, 2026</div>
+      <div><strong>Last Updated:</strong> September 19, 2026</div>
+    </div>
+  </header>
+
+  <div class="content">
+
+    <div class="callout-success">
+      <strong>🔒 Zero-Server Privacy Guarantee:</strong>
+      Sked SMS is built on a 100% on-device architecture. We do <strong>not</strong> operate cloud servers that receive, process, read, store, or monetize your personal messages, contacts, or phone numbers. All schedules, contact entries, and message contents remain exclusively on your device.
+    </div>
+
+    <h2>1. Introduction</h2>
+    <p>
+      This Privacy Policy describes how <strong>Sked SMS</strong> ("the Application", "we", "us", or "our") handles your information when you use our mobile application.
+    </p>
+    <p>
+      We recognize the sensitive nature of SMS and personal messaging. We are committed to maintaining the highest level of user privacy and transparency in accordance with global privacy principles, India's <strong>Digital Personal Data Protection (DPDP) Act 2023</strong>, and the requirements of app distribution platforms including the <strong>Indus App Store</strong> and <strong>Google Play</strong>.
+    </p>
+
+    <h2>2. Summary of Key Principles</h2>
+    <ul>
+      <li><strong>No Account Required:</strong> You do not need to register, create an account, or log in to use Sked SMS.</li>
+      <li><strong>No Remote Tracking or Analytics:</strong> The Application contains no third-party tracking libraries, advertising SDKs (such as AdMob), or behavioral analytics telemetry.</li>
+      <li><strong>Local Processing Only:</strong> All message scheduling calculations, contact formatting, and recurrence algorithms execute directly on your phone's processor.</li>
+      <li><strong>User-Initiated Actions Only:</strong> The app never transmits messages or accesses contacts without your direct configuration.</li>
+    </ul>
+
+    <h2>3. Permissions We Request and Why</h2>
+    <p>
+      To provide on-time automated message scheduling, Sked SMS requests access to specific Android platform features. Below is the full disclosure of every sensitive permission utilized:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Feature / Scope</th>
+          <th>How & Why It Is Used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>android.permission.SEND_SMS</code></td>
+          <td>Direct Carrier SMS</td>
+          <td>Used exclusively to dispatch SMS messages that you have scheduled via your device carrier SIM card at the exact scheduled timestamp. Messages are never sent unprompted.</td>
+        </tr>
+        <tr>
+          <td><code>android.permission.READ_CONTACTS</code></td>
+          <td>Native Contact Picker</td>
+          <td>Used solely to launch the native contact picker so you can select recipient names and phone numbers directly from your address book instead of manual typing. Contact data is never uploaded off your device.</td>
+        </tr>
+        <tr>
+          <td><code>android.permission.READ_PHONE_STATE</code></td>
+          <td>Telephony State Check</td>
+          <td>Used exclusively to verify SIM card availability and cellular service readiness before triggering an SMS dispatch, avoiding silent delivery failures. We do not inspect your IMEI or private device identifiers.</td>
+        </tr>
+        <tr>
+          <td><code>android.permission.SCHEDULE_EXACT_ALARM</code><br><code>android.permission.USE_EXACT_ALARM</code></td>
+          <td>Exact Alarm Dispatching</td>
+          <td>Enables high-precision scheduling via Android's native <code>AlarmManager</code> (<code>RTC_WAKEUP</code>) to ensure messages dispatch at the exact designated minute, even during Doze mode.</td>
+        </tr>
+        <tr>
+          <td><code>android.permission.RECEIVE_BOOT_COMPLETED</code></td>
+          <td>Device Reboot Recovery</td>
+          <td>Allows the Application to re-register pending alarms and advance daily repeating message cycles if your device is rebooted or powered off.</td>
+        </tr>
+        <tr>
+          <td><code>android.permission.WAKE_LOCK</code></td>
+          <td>Execution Guard</td>
+          <td>Holds a brief, momentary partial wake lock (typically under 3 seconds) while waking the CPU to execute the scheduled dispatch without being suspended by OS power saving.</td>
+        </tr>
+        <tr>
+          <td><code>android.permission.POST_NOTIFICATIONS</code></td>
+          <td>Status Alerts</td>
+          <td>Displays local on-device notifications confirming successful message dispatch or alerting you if a dispatch fails (e.g., lack of carrier signal).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. Prominent Disclosure: Accessibility Service Usage</h2>
+    <div class="card">
+      <p>
+        <strong>Accessibility Service Declaration (BIND_ACCESSIBILITY_SERVICE):</strong><br>
+        Sked SMS includes an optional feature for automated WhatsApp and WhatsApp Business message scheduling. This feature utilizes Android's <code>AccessibilityService</code> API under strict limitations:
+      </p>
+    </div>
+
+    <ul>
+      <li><strong>Specific Purpose:</strong> The Accessibility Service is used solely to detect when the official WhatsApp or WhatsApp Business compose window opens for a user-scheduled contact, verify the presence of the pre-filled message text, and automate the single tap action on the "Send" button.</li>
+      <li><strong>No Data Collection or Interception:</strong> The service does <strong>not</strong> read, collect, record, or transmit any chat history, incoming messages, contact lists, audio/video calls, passwords, payment info, or keystrokes.</li>
+      <li><strong>No Screen Monitoring:</strong> The service is inactive during normal device use and only operates during the specific execution window of an active, user-configured WhatsApp schedule.</li>
+      <li><strong>No System Alteration:</strong> The service does not alter any system settings, block other applications, or prevent uninstallation.</li>
+      <li><strong>User Consent:</strong> Enabling the Accessibility Service is 100% voluntary and requires deliberate user activation within Android's system settings. Users can revoke this permission at any time.</li>
+    </ul>
+
+    <h2>5. Data Storage and Retention</h2>
+    <p>
+      All application data—including scheduled messages, recipient contact names, phone numbers, delivery timestamps, and recurrence rules—is stored locally in private application sandboxed storage (<code>AsyncStorage</code> and Android <code>SharedPreferences</code>).
+    </p>
+    <ul>
+      <li>Data remains on your device until you edit or delete individual schedules inside the application.</li>
+      <li>If you clear the Application's storage via <strong>Android Settings &gt; Apps &gt; Sked SMS &gt; Storage &gt; Clear Data</strong>, all stored schedules and preferences are permanently erased immediately.</li>
+      <li>Uninstalling Sked SMS removes all application files and data from your device entirely.</li>
+    </ul>
+
+    <h2>6. Third-Party Services and Telephony Networks</h2>
+    <p>
+      Sked SMS operates without external servers, but relies on the following standard communication channels to execute your requested dispatches:
+    </p>
+    <ul>
+      <li><strong>Mobile Network Carriers:</strong> SMS dispatches are transmitted across your mobile telecommunications carrier network. Standard carrier messaging charges or SMS plan allowances apply according to your carrier agreement.</li>
+      <li><strong>WhatsApp:</strong> WhatsApp dispatches are initiated through the official WhatsApp application installed on your device. The delivery of WhatsApp messages is governed by WhatsApp's own Terms of Service and Privacy Policy.</li>
+    </ul>
+
+    <h2>7. Children's Privacy</h2>
+    <p>
+      Sked SMS does not knowingly collect, request, or maintain personal information from children under the age of 13 (or under 18 pursuant to India's DPDP Act). Because no personal information is collected by or transmitted to our servers, we do not have access to any identifying data from any user.
+    </p>
+
+    <h2>8. Security Safeguards</h2>
+    <p>
+      Your data is protected by the native security architecture of the Android operating system:
+    </p>
+    <ul>
+      <li><strong>Application Sandboxing:</strong> Each scheduled record is stored in private application storage inaccessible to other apps installed on the device.</li>
+      <li><strong>No Remote Endpoints:</strong> Because there are no backend APIs or databases, your message data cannot be exposed to remote server breaches, man-in-the-middle attacks, or external credential leaks.</li>
+    </ul>
+
+    <h2>9. Changes to This Privacy Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time to reflect changes in our practices or Android platform guidelines. Any changes will be posted on this page with an updated "Last Updated" revision date. We encourage you to review this policy periodically.
+    </p>
+
+    <h2>10. Contact Us</h2>
+    <p>
+      If you have questions, concerns, or feedback regarding this Privacy Policy or the privacy practices of Sked SMS, please contact:
+    </p>
+    <div class="card">
+      <p>
+        <strong>Sked SMS Developer Team</strong><br>
+        Lead Developer: Nikhil Kesari<br>
+        Email: <a href="mailto:nikhil.grk@gmail.com" style="color: var(--primary); font-weight: 500;">nikhil.grk@gmail.com</a><br>
+        Repository: <a href="https://github.com/nikhilkesari/skdsms" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 500;">https://github.com/nikhilkesari/skdsms</a><br>
+        Bangalore, Karnataka, India
+      </p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Sked SMS. All rights reserved.</div>
+    <div><a href="#top">Back to top ↑</a></div>
+  </footer>
+</div>
+
+</body>
+</html>
